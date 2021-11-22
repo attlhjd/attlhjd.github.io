@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function (_e) {
     }, {
         passive: true
     });
-    
+
     if('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js');
       };
@@ -537,7 +537,11 @@ document.addEventListener("DOMContentLoaded", function (_e) {
                         "<td>" + stations[horaires[key0][t].arret].nom + "</td>";
                     var tab = [];
                     for (var h of keys) {
-                        tab.push(horaires[h][t].horaire);
+                        if (horaires[h][t] === undefined){
+                            console.log("Hello");
+                        } else {
+                            tab.push(horaires[h][t].horaire);
+                        }
                     }
                     html += "<td data-horaires='" + tab + "'></td></tr>";
                 }
