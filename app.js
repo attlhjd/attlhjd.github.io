@@ -60,7 +60,10 @@ document.addEventListener("DOMContentLoaded", function (_e) {
     }, {
         passive: true
     });
-
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js');
+      };
+      
     
     /** 
      *     Swipe left-right dans les horaires pour passer au précédent/suivant
