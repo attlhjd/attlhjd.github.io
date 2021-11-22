@@ -38,7 +38,6 @@ self.addEventListener('install', (e) => {
 
 /** activate (clear le cache) */
 
-
   self.addEventListener('activate', (e) => {
     e.waitUntil(caches.keys().then((keyList) => {
       return Promise.all(keyList.map((key) => {
